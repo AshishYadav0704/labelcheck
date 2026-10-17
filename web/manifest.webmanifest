@@ -1,0 +1,18 @@
+{
+  "name": "LabelCheck",
+  "short_name": "LabelCheck",
+  "description": "Photograph a food label or scan a barcode to see how healthy it is.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#F4F6F3",
+  "theme_color": "#14201B",
+  "lang": "en-IN",
+  "categories": ["food", "health"],
+  "icons": [
+    {"src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any"},
+    {"src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any"},
+    {"src": "/icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"}
+  ]
+}

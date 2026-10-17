@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>LabelCheck: know what’s in your food</title>
+  <meta name="description" content="Photograph a food label, scan a barcode or paste the label text to see how healthy it is, checked against WHO and FSSAI standards.">
+  <meta name="theme-color" content="#F5F7F4" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0F1714" media="(prefers-color-scheme: dark)">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="icon" href="/icons/icon-192.png" type="image/png">
+  <link rel="apple-touch-icon" href="/icons/icon-192.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Martel:wght@700;800&family=Mukta:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="wordmark" href="/" data-nav="home" aria-label="LabelCheck home">
+        <svg class="mark" viewBox="0 0 24 24" aria-hidden="true"><path class="mark-hex" d="M12 1.8 21 7v10l-9 5.2L3 17V7z"/><path class="mark-tick" d="m7.8 12.3 2.9 2.9 5.6-6.2"/></svg>
+        <span>LabelCheck</span>
+      </a>
+      <div class="topbar-actions">
+        <button class="pill" id="lang-toggle" type="button" aria-label="Switch language">हिं</button>
+        <button class="pill pill-strong" id="open-profile" type="button" data-i18n="profile">Profile</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <!-- Home -->
+    <section id="view-home" class="view home">
+      <div class="hero">
+        <div class="hero-copy">
+          <h1 class="hero-title" data-i18n="heroTitle">Know what’s in your food before you buy it.</h1>
+          <p class="lede" data-i18n="heroLede">Photograph a pack, scan its barcode or paste its label. LabelCheck checks every ingredient against WHO and FSSAI standards and tells you, in plain words, what it means for you.</p>
+          <div class="actions">
+            <button class="action action-primary" id="start-photo" type="button">
+              <span class="action-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg></span>
+              <span class="action-text"><b data-i18n="photoLabel">Photograph label</b><small data-i18n="photoHint">Ingredient list and nutrition table</small></span>
+            </button>
+            <button class="action" id="start-barcode" type="button">
+              <span class="action-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6v12M7 6v12M10 6v12M14 6v12M16 6v12M20 6v12"/></svg></span>
+              <span class="action-text"><b data-i18n="scanBarcode">Scan barcode</b><small data-i18n="barcodeHint">Fastest for well-known brands</small></span>
+            </button>
+            <button class="action" id="start-text" type="button">
+              <span class="action-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7V5h16v2M12 5v14M9 19h6"/></svg></span>
+              <span class="action-text"><b data-i18n="typeLabel">Type the label</b><small data-i18n="typeHint">Paste from the pack or a shopping site</small></span>
+            </button>
+          </div>
+          <p class="status-note" id="server-note" hidden></p>
+        </div>
+
+        <figure class="hero-visual" aria-label="Sample report">
+          <div class="sample">
+            <div class="sample-head">
+              <svg class="seal seal-sample" viewBox="0 0 120 132" aria-hidden="true" data-grade="D">
+                <polygon class="seal-fill" points="60,6 112,36 112,96 60,126 8,96 8,36"/>
+                <polygon class="seal-track" points="60,6 112,36 112,96 60,126 8,96 8,36" pathLength="100"/>
+                <polygon class="seal-ring" points="60,6 112,36 112,96 60,126 8,96 8,36" pathLength="100" style="stroke-dasharray:26 100"/>
+                <text class="seal-letter" x="60" y="72">D</text>
+                <text class="seal-score" x="60" y="98">26/100</text>
+              </svg>
+              <div>
+                <p class="sample-tag" data-i18n="sampleTag">Sample report</p>
+                <p class="sample-name">Masala instant noodles</p>
+                <p class="sample-verdict" data-i18n="sampleVerdict">Limit to an occasional treat</p>
+              </div>
+            </div>
+            <ul class="warnings" aria-hidden="true">
+              <li class="warning">HIGH SATURATED FAT</li>
+              <li class="warning">HIGH SALT</li>
+            </ul>
+            <p class="sample-sub" data-i18n="sampleServing">One 70 g serving uses</p>
+            <div class="meters" aria-hidden="true">
+              <div class="meter-row"><span data-i18n="sampleSalt">Salt</span><span class="val">41%</span><div class="meter"><i data-l="high" style="width:41%"></i></div></div>
+              <div class="meter-row"><span data-i18n="sampleSatFat">Saturated fat</span><span class="val">24%</span><div class="meter"><i data-l="mid" style="width:24%"></i></div></div>
+              <div class="meter-row"><span data-i18n="sampleSugar">Sugar</span><span class="val">3%</span><div class="meter"><i data-l="low" style="width:3%"></i></div></div>
+            </div>
+          </div>
+        </figure>
+      </div>
+
+      <div class="recent" id="recent-wrap" hidden>
+        <h2 class="section-title" data-i18n="recent">Your recent checks</h2>
+        <ul class="recent-list" id="recent-list"></ul>
+      </div>
+
+      <section class="standards" aria-labelledby="standards-lead">
+        <p id="standards-lead" data-i18n="standardsLead">Checked against public standards from</p>
+        <ul>
+          <li>WHO</li><li>FSSAI</li><li>FAO/WHO JECFA</li><li>IARC</li><li>EFSA</li><li>Open Food Facts</li>
+        </ul>
+      </section>
+
+      <section class="features" aria-labelledby="features-title">
+        <h2 class="section-title" id="features-title" data-i18n="featuresTitle">What the report tells you</h2>
+        <div class="feature-grid">
+          <div class="feature">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8 20 7.4v9.2l-8 4.6-8-4.6V7.4z"/><path d="M8.5 12.2l2.4 2.4 4.6-5"/></svg>
+            <h3 data-i18n="f1t">A clear score and warnings</h3>
+            <p data-i18n="f1d">A 0–100 score and A–E grade, with the HIGH SUGAR, SALT and FAT warnings FSSAI has proposed for packs.</p>
+          </div>
+          <div class="feature">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6M10 3v6L5 19a1.5 1.5 0 0 0 1.3 2h11.4a1.5 1.5 0 0 0 1.3-2L14 9V3"/><path d="M7.5 15h9"/></svg>
+            <h3 data-i18n="f2t">Every additive explained</h3>
+            <p data-i18n="f2d">Each INS number checked for its safe daily limit, cancer classification, FSSAI status and bans in other countries.</p>
+          </div>
+          <div class="feature">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h4l2.5-6 5 12 2.5-6h4"/></svg>
+            <h3 data-i18n="f3t">What regular eating can do</h3>
+            <p data-i18n="f3d">Health effects linked to eating it often, how strong the evidence is, and a short video of the long-term picture.</p>
+          </div>
+          <div class="feature">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c.8-3.6 3.6-5.5 7-5.5s6.2 1.9 7 5.5"/></svg>
+            <h3 data-i18n="f4t">Advice for you</h3>
+            <p data-i18n="f4d">For diabetes, blood pressure, kidney disease, pregnancy, children, allergies and vegetarian, vegan or Jain diets.</p>
+          </div>
+          <div class="feature">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h11l-3-3M17 17H6l3 3"/></svg>
+            <h3 data-i18n="f5t">Better choices</h3>
+            <p data-i18n="f5d">Higher-scoring products other shoppers found, plus easy swaps from an Indian kitchen.</p>
+          </div>
+          <div class="feature">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8.5 10.5V7.5a3.5 3.5 0 0 1 7 0v3"/></svg>
+            <h3 data-i18n="f6t">Your data stays yours</h3>
+            <p data-i18n="f6d">LabelCheck doesn’t store your photos, and your health profile stays on your phone.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="how" aria-labelledby="how-title">
+        <h2 class="section-title" id="how-title" data-i18n="howTitle">How it works</h2>
+        <ol class="steps">
+          <li><b data-i18n="s1t">Scan or type the label</b><span data-i18n="s1d">A photo, a barcode or pasted text.</span></li>
+          <li><b data-i18n="s2t">Check what we read</b><span data-i18n="s2d">Fix any number before the report is made.</span></li>
+          <li><b data-i18n="s3t">Read your report</b><span data-i18n="s3d">Score, warnings, risks and better options.</span></li>
+        </ol>
+      </section>
+    </section>
+
+    <!-- Capture photos -->
+    <section id="view-capture" class="view narrow" hidden>
+      <button class="back" type="button" data-nav="home" data-i18n="back">Back</button>
+      <h1 class="view-title" data-i18n="captureTitle">Add photos of the label</h1>
+      <p class="lede" data-i18n="captureLede">For the best result, add the ingredient list and the nutrition table. Hold the phone flat and fill the frame with the text.</p>
+      <div class="shots" id="shots"></div>
+      <label class="btn btn-outline add-photo" id="add-photo-label">
+        <input id="photo-input" type="file" accept="image/*" capture="environment" multiple hidden>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+        <span data-i18n="addPhoto">Add a photo</span>
+      </label>
+      <p class="hint" data-i18n="photoLimit">Up to 4 photos. You can check and correct what we read before the report.</p>
+      <p class="error" id="capture-error" role="alert" hidden></p>
+      <button class="btn btn-primary btn-big" id="analyze-btn" type="button" disabled data-i18n="readLabel">Read the label</button>
+    </section>
+
+    <!-- Type / paste label text -->
+    <section id="view-text" class="view narrow" hidden>
+      <button class="back" type="button" data-nav="home" data-i18n="back">Back</button>
+      <h1 class="view-title" data-i18n="textTitle">Type or paste the label</h1>
+      <p class="lede" data-i18n="textLede">Copy the ingredient list and nutrition table from the pack or a shopping site. Include the line that starts with “Ingredients”.</p>
+      <form id="text-form" class="stack panel" novalidate>
+        <label class="field"><span data-i18n="productName">Product name</span>
+          <input id="text-name" maxlength="200" autocomplete="off"></label>
+        <label class="field"><span data-i18n="labelText">Label text</span>
+          <textarea id="text-body" rows="10" maxlength="12000" spellcheck="false"
+            placeholder="Ingredients: …&#10;&#10;Nutrition information per 100 g&#10;Energy (kcal) …&#10;Sodium (mg) …"></textarea></label>
+        <p class="error" id="text-error" role="alert" hidden></p>
+        <button class="btn btn-primary btn-big" type="submit" data-i18n="readLabel">Read the label</button>
+      </form>
+    </section>
+
+    <!-- Review what was read -->
+    <section id="view-review" class="view narrow" hidden>
+      <button class="back" type="button" data-nav="home" data-i18n="back">Back</button>
+      <h1 class="view-title" data-i18n="reviewTitle">Check what we read</h1>
+      <p class="lede" data-i18n="reviewLede">Compare these with the pack and fix anything that’s wrong. Leave a box empty if it isn’t on the label.</p>
+      <div class="read-note" id="review-note" role="status"></div>
+      <form id="review-form" class="stack panel" novalidate></form>
+    </section>
+
+    <!-- Barcode -->
+    <section id="view-scan" class="view narrow" hidden>
+      <button class="back" type="button" data-nav="home" data-i18n="back">Back</button>
+      <h1 class="view-title" data-i18n="scanTitle">Point at the barcode</h1>
+      <div class="viewfinder" id="viewfinder">
+        <video id="scan-video" playsinline muted></video>
+        <div class="viewfinder-frame" aria-hidden="true"></div>
+      </div>
+      <p class="hint" id="scan-status" data-i18n="scanHint">Hold steady about 15 cm away.</p>
+      <form class="barcode-form panel" id="barcode-form">
+        <label for="barcode-input" data-i18n="typeBarcode">Or type the number under the barcode</label>
+        <div class="row">
+          <input id="barcode-input" inputmode="numeric" pattern="[0-9]{6,14}" autocomplete="off" placeholder="8901234567890" required>
+          <button class="btn btn-primary" type="submit" data-i18n="look">Look up</button>
+        </div>
+      </form>
+      <p class="error" id="scan-error" role="alert" hidden></p>
+    </section>
+
+    <!-- Working -->
+    <section id="view-loading" class="view narrow" hidden aria-live="polite">
+      <div class="working">
+        <svg class="working-hex" viewBox="0 0 120 132" aria-hidden="true">
+          <polygon class="seal-track" points="60,6 112,36 112,96 60,126 8,96 8,36" pathLength="100"/>
+          <polygon class="working-ring" points="60,6 112,36 112,96 60,126 8,96 8,36" pathLength="100"/>
+        </svg>
+        <p class="working-step" id="working-step">Reading the label…</p>
+        <p class="hint" data-i18n="workingHint">This usually takes 5 to 15 seconds.</p>
+      </div>
+    </section>
+
+    <!-- Report -->
+    <section id="view-report" class="view wide" hidden>
+      <div class="report-top">
+        <button class="back" type="button" data-nav="home" data-i18n="newCheck">New check</button>
+        <div class="topbar-actions">
+          <button class="pill" id="edit-btn" type="button" data-i18n="editDetails">Edit details</button>
+          <button class="pill pill-strong" id="share-btn" type="button" data-i18n="share">Share</button>
+        </div>
+      </div>
+      <article id="report" class="report"></article>
+    </section>
+  </main>
+
+  <!-- Profile -->
+  <dialog id="profile-dialog" aria-labelledby="profile-title">
+    <form method="dialog" id="profile-form" class="profile-form">
+      <h2 id="profile-title" data-i18n="profileTitle">Make reports personal</h2>
+      <p class="hint" data-i18n="profilePrivacy">Saved only on this phone. It is sent with each check to tailor the advice and is never stored on our server.</p>
+      <fieldset>
+        <legend data-i18n="ageGroup">Who is eating it?</legend>
+        <div class="chips" id="age-chips"></div>
+      </fieldset>
+      <fieldset>
+        <legend data-i18n="diet">Diet</legend>
+        <div class="chips" id="diet-chips"></div>
+      </fieldset>
+      <fieldset>
+        <legend data-i18n="conditions">Health conditions</legend>
+        <div class="chips" id="condition-chips"></div>
+      </fieldset>
+      <fieldset>
+        <legend data-i18n="allergies">Allergies</legend>
+        <div class="chips" id="allergy-chips"></div>
+      </fieldset>
+      <div class="dialog-actions">
+        <button class="btn btn-outline" value="cancel" type="submit" data-i18n="cancel">Cancel</button>
+        <button class="btn btn-primary" value="save" id="save-profile" type="submit" data-i18n="saveProfile">Save profile</button>
+      </div>
+    </form>
+  </dialog>
+
+  <footer class="foot">
+    <div class="foot-inner">
+      <span class="foot-brand">LabelCheck</span>
+      <p data-i18n="footer">General information, not medical advice. Product data partly from Open Food Facts (ODbL).</p>
+    </div>
+  </footer>
+  <script src="/app.js" defer></script>
+</body>
+</html>

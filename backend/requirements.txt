@@ -1,0 +1,9 @@
+# Runtime dependencies (versions the test suite was run against).
+starlette==1.6.0
+uvicorn==0.53.0
+pydantic==2.13.5
+python-multipart==0.0.32
+requests==2.34.2
+pillow==12.3.0
+imageio-ffmpeg==0.6.0   # bundles an ffmpeg binary with H.264 + VP9 encoders for the long-term video
+pytesseract==0.3.13     # offline OCR fallback; also needs the `tesseract-ocr` system package

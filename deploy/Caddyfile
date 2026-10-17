@@ -1,0 +1,14 @@
+{$DOMAIN} {
+	encode zstd gzip
+
+	# Label photos can be several MB each (up to 4 per request).
+	request_body {
+		max_size 48MB
+	}
+
+	reverse_proxy app:8000 {
+		# Replace (never append to) any client-supplied value, so the app's
+		# rate limiter always sees the real client IP.
+		header_up X-Forwarded-For {remote_host}
+	}
+}

@@ -1,0 +1,129 @@
+{
+  "meta": {
+    "version": "2026.10",
+    "last_reviewed": "2026-10-17",
+    "about": "Long-term health effects linked to regular excess intake of a nutrient or ingredient type. Wording is deliberately 'linked with' — a single product does not cause a disease. Evidence levels: strong = consistent trials/cohorts and WHO/IARC consensus; moderate = consistent observational evidence; limited = early or mixed evidence."
+  },
+  "links": [
+    {
+      "id": "salt",
+      "trigger": "salt",
+      "title": "Too much salt",
+      "body_systems": ["heart", "kidneys"],
+      "effect": "Regularly eating more than 5 g of salt a day raises blood pressure, which over years increases the risk of heart disease, stroke and kidney damage.",
+      "evidence": "strong",
+      "source": "WHO — Salt reduction fact sheet",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/salt-reduction"
+    },
+    {
+      "id": "sugar",
+      "trigger": "sugars",
+      "title": "Too much sugar",
+      "body_systems": ["metabolism", "teeth", "liver"],
+      "effect": "High intake of free sugars is linked with weight gain and tooth decay, and, through weight gain, with a higher risk of type 2 diabetes. Excess sugar and calories also contribute to fatty liver.",
+      "evidence": "strong",
+      "source": "WHO — Guideline: sugars intake for adults and children (2015)",
+      "url": "https://www.who.int/publications/i/item/9789241549028"
+    },
+    {
+      "id": "sugary_drink",
+      "trigger": "sugary_drink",
+      "title": "Sugar-sweetened drinks",
+      "body_systems": ["metabolism", "teeth"],
+      "effect": "Regular sugary drinks are one of the clearest dietary links to weight gain, type 2 diabetes and tooth decay, because liquid sugar does not make you feel full.",
+      "evidence": "strong",
+      "source": "WHO — Healthy diet fact sheet",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/healthy-diet"
+    },
+    {
+      "id": "saturated_fat",
+      "trigger": "saturated_fat",
+      "title": "Too much saturated fat",
+      "body_systems": ["heart"],
+      "effect": "Regularly eating more saturated fat than recommended raises LDL ('bad') cholesterol, which is linked with a higher risk of heart disease.",
+      "evidence": "strong",
+      "source": "WHO — Healthy diet fact sheet",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/healthy-diet"
+    },
+    {
+      "id": "trans_fat",
+      "trigger": "trans_fat",
+      "title": "Trans fat",
+      "body_systems": ["heart"],
+      "effect": "Industrial trans fat raises bad cholesterol and lowers good cholesterol; it is strongly linked with heart attacks and early death from heart disease.",
+      "evidence": "strong",
+      "source": "WHO — Trans fat fact sheet",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/trans-fat"
+    },
+    {
+      "id": "ultra_processed",
+      "trigger": "nova4",
+      "title": "Ultra-processed food",
+      "body_systems": ["metabolism", "heart", "gut"],
+      "effect": "Diets high in ultra-processed foods are linked in large observational studies with obesity, type 2 diabetes, heart disease, depression and earlier death. This shows strong associations, but the exact causes are still being studied.",
+      "evidence": "moderate",
+      "source": "BMJ (2024) umbrella review of ultra-processed food and health",
+      "url": "https://www.bmj.com/content/384/bmj-2023-077310"
+    },
+    {
+      "id": "processed_meat",
+      "trigger": "nitrite",
+      "title": "Processed meat with nitrites",
+      "body_systems": ["gut"],
+      "effect": "IARC classifies processed meat as carcinogenic to humans (Group 1): each 50 g eaten daily is linked with about an 18% higher risk of bowel cancer.",
+      "evidence": "strong",
+      "source": "WHO/IARC — Q&A on the carcinogenicity of red and processed meat",
+      "url": "https://www.who.int/news-room/questions-and-answers/item/cancer-carcinogenicity-of-the-consumption-of-red-meat-and-processed-meat"
+    },
+    {
+      "id": "low_fibre",
+      "trigger": "low_fibre_refined",
+      "title": "Refined, low-fibre food",
+      "body_systems": ["metabolism", "gut"],
+      "effect": "Diets built on refined grains and low in fibre are linked with bigger blood-sugar swings, constipation and a higher long-term risk of type 2 diabetes, heart disease and bowel cancer than diets rich in whole grains and fibre.",
+      "evidence": "moderate",
+      "source": "WHO — Carbohydrate intake guideline (2023)",
+      "url": "https://www.who.int/publications/i/item/9789240073593"
+    },
+    {
+      "id": "sweeteners",
+      "trigger": "sweetener",
+      "title": "Non-sugar sweeteners",
+      "body_systems": ["metabolism"],
+      "effect": "WHO advises against using non-sugar sweeteners to control weight: they do not help long term, and observational studies link regular use with a higher risk of type 2 diabetes and heart disease (low-certainty evidence).",
+      "evidence": "limited",
+      "source": "WHO — Guideline on non-sugar sweeteners (2023)",
+      "url": "https://www.who.int/news/item/15-05-2023-who-advises-not-to-use-non-sugar-sweeteners-for-weight-control-in-newly-released-guideline"
+    },
+    {
+      "id": "azo_colours",
+      "trigger": "azo_colour",
+      "title": "Synthetic azo colours",
+      "body_systems": ["brain"],
+      "effect": "A UK study found mixtures of some synthetic colours increased hyperactivity in some children. The EU requires a warning label on foods containing them.",
+      "evidence": "limited",
+      "source": "EFSA — Food colours",
+      "url": "https://www.efsa.europa.eu/en/topics/topic/food-colours"
+    },
+    {
+      "id": "phosphates",
+      "trigger": "phosphate",
+      "title": "Phosphate additives",
+      "body_systems": ["kidneys"],
+      "effect": "Phosphorus from additives is absorbed almost completely. For people with chronic kidney disease, high phosphate intake is linked with faster disease progression and heart problems.",
+      "evidence": "moderate",
+      "source": "EFSA — Re-evaluation of phosphates as food additives (2019)",
+      "url": "https://www.efsa.europa.eu/en/news/phosphates-food-additives-safety-intake-limit"
+    },
+    {
+      "id": "caffeine",
+      "trigger": "caffeine",
+      "title": "Caffeine",
+      "body_systems": ["brain", "heart"],
+      "effect": "Too much caffeine can cause poor sleep, anxiety and a fast heartbeat. Children are more sensitive, and high intake in pregnancy is linked with lower birth weight.",
+      "evidence": "moderate",
+      "source": "EFSA — Scientific opinion on the safety of caffeine (2015)",
+      "url": "https://www.efsa.europa.eu/en/efsajournal/pub/4102"
+    }
+  ]
+}

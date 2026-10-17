@@ -1,0 +1,39 @@
+# Production-style setup: the app behind Caddy, which gets a free HTTPS
+# certificate automatically. HTTPS is required for phone cameras to work.
+#
+#   cp .env.example .env      # set DOMAIN and (optionally) an AI key
+#   docker compose up -d --build
+#
+# For a quick local try without a domain, leave DOMAIN=localhost.
+services:
+  app:
+    build: .
+    env_file: .env
+    environment:
+      TRUST_PROXY_HEADERS: "true"   # Caddy sets X-Forwarded-For to the real client IP
+    volumes:
+      - labelcheck-data:/data
+    restart: unless-stopped
+    expose:
+      - "8000"
+
+  caddy:
+    image: caddy:2
+    depends_on:
+      - app
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    environment:
+      DOMAIN: ${DOMAIN:-localhost}
+    volumes:
+      - ./deploy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy-data:/data
+      - caddy-config:/config
+    restart: unless-stopped
+
+volumes:
+  labelcheck-data:
+  caddy-data:
+  caddy-config:

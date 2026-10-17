@@ -1,0 +1,25 @@
+# One-click deploy on Render (https://render.com): New > Blueprint > this repo.
+# A persistent disk keeps the product database, saved reports and video cache.
+services:
+  - type: web
+    name: labelcheck
+    runtime: docker
+    plan: starter
+    healthCheckPath: /api/v1/health
+    disk:
+      name: labelcheck-data
+      mountPath: /data
+      sizeGB: 1
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: TRUST_PROXY_HEADERS
+        value: "true"
+      - key: AI_PROVIDER
+        value: auto
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: OFF_USER_AGENT
+        sync: false

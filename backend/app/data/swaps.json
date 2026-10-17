@@ -1,0 +1,179 @@
+{
+  "meta": {
+    "about": "Generic, brand-free healthier swaps by product category, suited to Indian kitchens and shops. Brand alternatives come from the product database and Open Food Facts, not from this file.",
+    "last_reviewed": "2026-10-17"
+  },
+  "categories": {
+    "instant_noodles": {
+      "label": "Instant noodles",
+      "off_tags": ["en:instant-noodles"],
+      "keywords": ["noodle", "ramen", "maggi", "hakka"],
+      "swaps": [
+        {"name": "Whole-wheat or millet noodles, cooked with half the tastemaker", "why": "More fibre; using half the seasoning packet roughly halves the salt."},
+        {"name": "Vegetable poha or upma", "why": "Quick to make, far less salt and no added flavour enhancers."},
+        {"name": "Vermicelli (seviyan) upma with vegetables", "why": "Same comfort, you control the salt and oil."}
+      ]
+    },
+    "chips_namkeen": {
+      "label": "Chips and namkeen",
+      "off_tags": ["en:crisps", "en:salty-snacks"],
+      "keywords": ["chips", "crisps", "namkeen", "bhujia", "mixture", "puffs", "nachos", "kurkure", "wafers"],
+      "swaps": [
+        {"name": "Roasted makhana (fox nuts) with light seasoning", "why": "Crunchy, low in fat when dry-roasted, and you control the salt."},
+        {"name": "Roasted chana or peanuts (unsalted or lightly salted)", "why": "Protein and fibre keep you full; no frying oil."},
+        {"name": "Cucumber, carrot or fruit chaat", "why": "Fibre and water, with only a pinch of chaat masala."}
+      ]
+    },
+    "biscuits_cookies": {
+      "label": "Biscuits and cookies",
+      "off_tags": ["en:biscuits"],
+      "keywords": ["biscuit", "cookie", "cracker", "rusk", "wafer biscuit"],
+      "swaps": [
+        {"name": "A handful of nuts and a fruit", "why": "Healthy fats and fibre instead of refined flour, sugar and palm oil."},
+        {"name": "Homemade besan or oats chilla", "why": "Protein-rich and filling for tea time."},
+        {"name": "Biscuits made with whole wheat or millets and no hydrogenated fat", "why": "If you want a biscuit, check for whole grain as the first ingredient and no 'hydrogenated' or 'vanaspati'."}
+      ]
+    },
+    "chocolate_confectionery": {
+      "label": "Chocolate and sweets",
+      "off_tags": ["en:chocolates", "en:confectioneries"],
+      "keywords": ["chocolate", "candy", "toffee", "gummy", "jelly", "lollipop", "eclair"],
+      "swaps": [
+        {"name": "Dark chocolate (70% cocoa or more), a small piece", "why": "Less sugar per bite and fewer additives."},
+        {"name": "Dates, figs or a few raisins", "why": "Sweet, with fibre and minerals."},
+        {"name": "Fresh seasonal fruit", "why": "Natural sugar comes packaged with fibre and water."}
+      ]
+    },
+    "sugary_drink": {
+      "label": "Soft drinks",
+      "off_tags": ["en:sodas"],
+      "keywords": ["cola", "soda", "soft drink", "carbonated", "aerated", "lemonade", "orange drink"],
+      "swaps": [
+        {"name": "Nimbu pani with little or no sugar", "why": "Refreshing, with a fraction of the sugar."},
+        {"name": "Plain or masala chaas (buttermilk)", "why": "Cooling, low in sugar, with some protein and probiotics."},
+        {"name": "Plain sparkling water with lemon", "why": "Keeps the fizz, drops the sugar and phosphoric acid."}
+      ]
+    },
+    "fruit_juice": {
+      "label": "Packaged juice",
+      "off_tags": ["en:fruit-juices", "en:juices-and-nectars"],
+      "keywords": ["juice", "nectar", "fruit drink"],
+      "swaps": [
+        {"name": "Whole fresh fruit", "why": "Same sweetness with the fibre left in, so sugar is absorbed more slowly."},
+        {"name": "Tender coconut water", "why": "Naturally hydrating and lower in sugar than most packaged juices."}
+      ]
+    },
+    "energy_drink": {
+      "label": "Energy drinks",
+      "off_tags": ["en:energy-drinks"],
+      "keywords": ["energy drink", "energy"],
+      "swaps": [
+        {"name": "Water, plus a short walk or rest", "why": "Tiredness is often dehydration or poor sleep."},
+        {"name": "A cup of tea or coffee with little sugar (adults only)", "why": "Much less caffeine and sugar than most energy drinks."}
+      ]
+    },
+    "breakfast_cereal": {
+      "label": "Breakfast cereal",
+      "off_tags": ["en:breakfast-cereals"],
+      "keywords": ["cereal", "flakes", "muesli", "granola", "chocos", "loops"],
+      "swaps": [
+        {"name": "Plain rolled oats or dalia cooked with milk and fruit", "why": "Whole grain, no added sugar unless you add it."},
+        {"name": "Vegetable poha, upma, idli or besan chilla", "why": "Traditional breakfasts with more protein or fibre and less sugar."}
+      ]
+    },
+    "health_drink_powder": {
+      "label": "Malted / health drink powders",
+      "off_tags": ["en:cocoa-and-chocolate-powders", "en:malted-drinks"],
+      "keywords": ["health drink", "malt", "malted", "nutrition drink", "protein powder for kids", "bournvita", "horlicks", "boost", "complan"],
+      "swaps": [
+        {"name": "Plain milk with a pinch of cardamom or haldi", "why": "Protein and calcium without the added sugar many of these powders contain."},
+        {"name": "Ragi malt made at home with little jaggery", "why": "Calcium-rich millet; you control the sweetness."}
+      ]
+    },
+    "dairy_drink": {
+      "label": "Flavoured milk",
+      "off_tags": ["en:flavoured-milks", "en:milkshakes"],
+      "keywords": ["flavoured milk", "flavored milk", "milkshake", "lassi", "cold coffee"],
+      "swaps": [
+        {"name": "Plain milk or unsweetened lassi with fruit", "why": "Same protein and calcium, much less added sugar."}
+      ]
+    },
+    "yogurt_dessert": {
+      "label": "Flavoured yogurt / dessert",
+      "off_tags": ["en:yogurts", "en:dairy-desserts"],
+      "keywords": ["yogurt", "yoghurt", "dahi", "pudding", "custard"],
+      "swaps": [
+        {"name": "Plain dahi with chopped fruit", "why": "Probiotics and protein without added sugar or thickeners."}
+      ]
+    },
+    "ice_cream": {
+      "label": "Ice cream / frozen dessert",
+      "off_tags": ["en:ice-creams", "en:frozen-desserts"],
+      "keywords": ["ice cream", "frozen dessert", "kulfi", "sundae", "cone"],
+      "swaps": [
+        {"name": "Frozen banana or mango 'nice cream'", "why": "Creamy, with fruit sugar and fibre instead of vegetable fat and syrup."},
+        {"name": "A real dairy ice cream, small portion", "why": "'Frozen dessert' often uses vegetable fat in place of milk fat; check the label."}
+      ]
+    },
+    "bread_bakery": {
+      "label": "Bread and bakery",
+      "off_tags": ["en:breads"],
+      "keywords": ["bread", "bun", "pav", "cake", "muffin", "croissant", "puff", "pastry"],
+      "swaps": [
+        {"name": "Bread with whole wheat or multigrain listed first and 3 g+ fibre per 100 g", "why": "Many 'brown' breads are mostly maida; the first ingredient tells you."},
+        {"name": "Fresh roti or paratha made from atta", "why": "Whole grain with no preservatives."}
+      ]
+    },
+    "sauce_spread": {
+      "label": "Sauces and spreads",
+      "off_tags": ["en:sauces", "en:spreads"],
+      "keywords": ["ketchup", "sauce", "mayonnaise", "spread", "jam", "dip", "chutney"],
+      "swaps": [
+        {"name": "Fresh green chutney (mint-coriander) or tomato chutney made at home", "why": "Far less sugar and salt, no preservatives."},
+        {"name": "Hung curd dip", "why": "Creamy like mayonnaise, with protein and much less fat."}
+      ]
+    },
+    "ready_meal": {
+      "label": "Ready-to-eat meals",
+      "off_tags": ["en:meals"],
+      "keywords": ["ready to eat", "ready-to-eat", "instant", "heat and eat", "frozen meal", "pasta"],
+      "swaps": [
+        {"name": "Khichdi, dal-rice or a simple sabzi-roti", "why": "Takes 20-30 minutes, much less salt, and no preservatives."}
+      ]
+    },
+    "processed_meat": {
+      "label": "Processed meat",
+      "off_tags": ["en:prepared-meats", "en:sausages"],
+      "keywords": ["sausage", "salami", "ham", "bacon", "nugget", "luncheon", "frankfurter", "hot dog"],
+      "swaps": [
+        {"name": "Fresh chicken, fish, eggs, paneer or dal", "why": "Protein without nitrite preservatives (processed meat is an IARC Group 1 carcinogen)."}
+      ]
+    },
+    "sweets_mithai": {
+      "label": "Packaged sweets",
+      "off_tags": ["en:sweets"],
+      "keywords": ["mithai", "ladoo", "laddu", "barfi", "halwa", "gulab jamun", "rasgulla", "soan papdi", "peda"],
+      "swaps": [
+        {"name": "Dates-and-nuts ladoo, small portion", "why": "Sweetness with fibre and healthy fats."},
+        {"name": "Fresh fruit", "why": "Satisfies a sweet craving with far less sugar."}
+      ]
+    },
+    "cooking_oil_fat": {
+      "label": "Cooking oil and fat",
+      "off_tags": ["en:vegetable-oils"],
+      "keywords": ["oil", "vanaspati", "ghee", "margarine", "shortening"],
+      "swaps": [
+        {"name": "Rotate mustard, groundnut, rice-bran or sesame oil", "why": "A mix of oils balances fats; avoid vanaspati and other hydrogenated fats."}
+      ]
+    },
+    "other": {
+      "label": "Packaged food",
+      "off_tags": [],
+      "keywords": [],
+      "swaps": [
+        {"name": "A version with fewer ingredients you recognise", "why": "Shorter ingredient lists usually mean less processing."},
+        {"name": "Fresh or home-cooked food when possible", "why": "You control salt, sugar and oil."}
+      ]
+    }
+  }
+}

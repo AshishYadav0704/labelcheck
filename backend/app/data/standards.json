@@ -1,0 +1,79 @@
+{
+  "meta": {
+    "version": "2026.10",
+    "last_reviewed": "2026-10-17",
+    "about": "Nutrient limits and thresholds used by the scoring engine. Every number carries its source. Change thresholds here, not in code."
+  },
+
+  "daily_limits": {
+    "about": "WHO adult guidance on a 2000 kcal reference diet. WHO says limits for children (2-15 years) should be adjusted down in line with their lower energy needs; this app scales them by child_energy_kcal / reference_energy_kcal as an approximation.",
+    "reference_energy_kcal": 2000,
+    "child_energy_kcal": 1500,
+    "nutrients": {
+      "salt_g":          {"limit": 5,    "kind": "max", "label": "Salt",          "source": "WHO: less than 5 g salt (2 g sodium) per day for adults"},
+      "sugars_g":        {"limit": 50,   "kind": "max", "label": "Sugar",         "source": "WHO: free sugars below 10% of energy (about 50 g on 2000 kcal), ideally below 5% (about 25 g). Labels show total sugars, which can include natural milk/fruit sugar."},
+      "saturated_fat_g": {"limit": 22,   "kind": "max", "label": "Saturated fat", "source": "WHO: saturated fat below 10% of energy (about 22 g on 2000 kcal)"},
+      "trans_fat_g":     {"limit": 2.2,  "kind": "max", "label": "Trans fat",     "source": "WHO: trans fat below 1% of energy (about 2.2 g on 2000 kcal), ideally as close to zero as possible"},
+      "fat_g":           {"limit": 67,   "kind": "max", "label": "Total fat",     "source": "WHO: total fat below 30% of energy (about 67 g on 2000 kcal)"},
+      "energy_kcal":     {"limit": 2000, "kind": "max", "label": "Energy",        "source": "Reference intake for an average adult"},
+      "fiber_g":         {"limit": 25,   "kind": "min", "label": "Fibre",         "source": "WHO (2023): at least 25 g of naturally occurring dietary fibre per day for adults"}
+    }
+  },
+
+  "high_thresholds": {
+    "about": "A product is flagged HIGH in a nutrient above these per-100 g (solids) or per-100 ml (drinks) values. FSSAI has proposed red front-of-pack 'HIGH FAT / HIGH SUGAR / HIGH SALT' warnings but final thresholds were not notified at last review, so these interim values follow the UK Food Standards Agency front-of-pack 'high' criteria. Replace with FSSAI's numbers once notified.",
+    "source": "UK FSA front-of-pack nutrition labelling guidance (interim, pending final FSSAI thresholds)",
+    "solid":  {"fat_g": 17.5, "saturated_fat_g": 5.0, "sugars_g": 22.5, "salt_g": 1.5},
+    "liquid": {"fat_g": 8.75, "saturated_fat_g": 2.5, "sugars_g": 11.25, "salt_g": 0.75}
+  },
+  "low_thresholds": {
+    "source": "UK FSA front-of-pack nutrition labelling guidance",
+    "solid":  {"fat_g": 3.0, "saturated_fat_g": 1.5, "sugars_g": 5.0, "salt_g": 0.3},
+    "liquid": {"fat_g": 1.5, "saturated_fat_g": 0.75, "sugars_g": 2.5, "salt_g": 0.3}
+  },
+
+  "ingredient_flags": [
+    {"id": "trans_fat_source", "label": "Hydrogenated fat (possible trans fat)", "keywords": ["partially hydrogenated", "hydrogenated vegetable", "hydrogenated vegetable oil", "hydrogenated vegetable fat", "hydrogenated fat", "hydrogenated oil", "vanaspati", "bakery shortening", "interesterified"], "severity": "high", "note": "Hydrogenated fats can contain industrial trans fat, the most harmful kind of fat for the heart. FSSAI limits trans fat to 2% of fats and oils, but even small amounts eaten often add up."},
+    {"id": "palm_oil", "label": "Palm oil / palmolein", "keywords": ["palm oil", "palmolein", "palm olein", "refined palmolein", "palm kernel oil", "palm fat"], "severity": "moderate", "note": "High in saturated fat. Common in fried snacks, biscuits and instant noodles."},
+    {"id": "refined_flour", "label": "Refined wheat flour (maida)", "keywords": ["refined wheat flour", "maida", "wheat flour (maida)", "refined flour", "white flour", "all purpose flour", "all-purpose flour"], "severity": "low", "note": "Most of the fibre is removed, so it is digested quickly and raises blood sugar faster than whole grains."},
+    {"id": "added_sugar", "label": "Added sugars", "keywords": ["sugar", "invert sugar", "invert syrup", "liquid glucose", "glucose syrup", "glucose-fructose syrup", "high fructose corn syrup", "corn syrup", "dextrose", "maltodextrin", "fructose", "sucrose", "jaggery", "honey", "malt extract", "brown sugar", "cane sugar"], "severity": "info", "note": "Sugar added during manufacturing."},
+    {"id": "artificial_flavour", "label": "Added flavourings", "keywords": ["artificial flavour", "artificial flavor", "artificial flavouring", "nature identical flavour", "nature identical flavouring", "flavouring substances", "added flavour", "added flavor", "flavour enhancer", "flavor enhancer"], "severity": "low", "note": "Flavourings are a marker of ultra-processed food."},
+    {"id": "caffeine", "label": "Caffeine", "keywords": ["caffeine", "coffee extract", "guarana", "green coffee"], "severity": "moderate", "note": "Not advised for children. Pregnant women are usually advised to keep caffeine under 200 mg a day."},
+    {"id": "protein_isolate", "label": "Protein isolate / hydrolysed protein", "keywords": ["protein isolate", "hydrolysed vegetable protein", "hydrolyzed vegetable protein", "hydrolysed protein", "soy protein isolate", "whey protein isolate"], "severity": "info", "note": "Industrial ingredient; a marker of ultra-processing."}
+  ],
+
+  "allergens": {
+    "about": "Keyword lists for common allergens. FSSAI (Labelling and Display) Regulations 2020 require declaring cereals containing gluten, crustaceans, milk, eggs, fish, peanuts, tree nuts, soybean and sulphites (10 mg/kg or more).",
+    "groups": {
+      "gluten":     ["wheat", "maida", "atta", "semolina", "suji", "sooji", "rava", "barley", "rye", "malt", "gluten", "spelt", "seitan"],
+      "milk":       ["milk", "milk solids", "milk powder", "whey", "casein", "caseinate", "lactose", "butter", "ghee", "cream", "curd", "paneer", "cheese", "khoa", "khoya", "yoghurt", "yogurt", "dairy"],
+      "egg":        ["egg", "eggs", "albumin", "egg white", "egg yolk"],
+      "peanut":     ["peanut", "peanuts", "groundnut", "groundnuts", "moongphali"],
+      "tree_nuts":  ["almond", "cashew", "walnut", "pistachio", "hazelnut", "pecan", "nuts", "brazil nut", "macadamia", "badam", "kaju", "akhrot", "pista"],
+      "soy":        ["soy", "soya", "soybean", "soybeans", "soyabean", "soyabeans", "soy lecithin", "soya lecithin", "tofu"],
+      "fish":       ["fish", "anchovy", "tuna", "sardine", "fish sauce"],
+      "crustacean": ["prawn", "shrimp", "crab", "lobster", "crustacean", "crustaceans"],
+      "sesame":     ["sesame", "til", "gingelly", "tahini"],
+      "mustard":    ["mustard", "sarson", "rai"],
+      "sulphites":  ["sulphite", "sulfite", "sulphur dioxide", "sulfur dioxide", "metabisulphite", "metabisulfite"]
+    }
+  },
+
+  "nova": {
+    "about": "Estimated NOVA processing group (1 = unprocessed, 4 = ultra-processed), following the published NOVA definitions. Estimated from the ingredient list, so treat it as indicative.",
+    "ultra_processed_additive_functions": ["colour", "flavour enhancer", "sweetener", "emulsifier", "thickener", "glazing agent", "gelling agent"],
+    "ultra_processed_ingredients": ["hydrogenated", "interesterified", "maltodextrin", "glucose syrup", "liquid glucose", "invert sugar", "high fructose corn syrup", "corn syrup", "protein isolate", "hydrolysed", "hydrolyzed", "modified starch", "flavour", "flavor", "flavouring", "flavoring", "whey powder", "whey protein", "lactose", "casein", "milk protein concentrate"],
+    "culinary_ingredients": ["salt", "sugar", "oil", "ghee", "butter", "vinegar", "jaggery", "honey", "starch"]
+  },
+
+  "diets": {
+    "about": "Diet checks read the ingredient list and the FSSAI veg / non-veg mark. 'Vegetarian' follows the Indian meaning (no meat, fish or egg), which is what FSSAI's green mark certifies. Ingredient lists do not always reveal the source of an additive, so 'maybe' items are shown as a caution, not a verdict.",
+    "meat_fish": ["meat", "chicken", "mutton", "lamb", "goat", "beef", "pork", "bacon", "ham", "salami", "sausage", "pepperoni", "lard", "tallow", "suet", "beef fat", "chicken fat", "chicken extract", "chicken stock", "meat extract", "bone broth", "fish", "fish oil", "fish sauce", "fish extract", "cod liver oil", "anchovy", "tuna", "sardine", "prawn", "shrimp", "crab", "lobster", "squid", "oyster", "oyster sauce", "gelatin", "gelatine", "collagen", "isinglass", "animal rennet", "carmine", "cochineal"],
+    "egg": ["egg", "eggs", "egg powder", "egg white", "egg yolk", "albumin", "egg albumin", "whole egg"],
+    "dairy": ["milk", "milk solids", "milk powder", "skimmed milk", "whey", "casein", "caseinate", "lactose", "butter", "butter oil", "ghee", "cream", "curd", "dahi", "paneer", "cheese", "khoa", "khoya", "yoghurt", "yogurt", "buttermilk", "dairy"],
+    "dairy_exclude": ["coconut milk", "cocoa butter", "shea butter", "peanut butter", "nut butter", "almond milk", "soy milk", "soya milk", "oat milk", "cream of tartar", "coconut cream"],
+    "bee": ["honey", "beeswax", "bees wax", "royal jelly", "propolis"],
+    "jain_avoid": ["onion", "garlic", "potato", "potatoes", "carrot", "beetroot", "radish", "sweet potato", "yam", "turnip", "mushroom", "ginger", "spring onion", "shallot", "leek", "onion powder", "garlic powder", "dehydrated onion", "dehydrated garlic"],
+    "jain_note": "Jain practice varies between families (for example on dry ginger, turmeric or yeast); check anything flagged here against your own practice."
+  }
+}

@@ -1,0 +1,10 @@
+.git
+.github
+**/__pycache__
+**/*.pyc
+backend/data_store
+backend/tests
+docs
+.env
+*.md
+!README.md
